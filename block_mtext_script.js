@@ -5,7 +5,7 @@ var blockstatepath = "./blockstates"
 var itemmodelpath = "./models/item"
 var blockmodelpath = "./models/block"
 
-var blocks = require("./blocks.json")
+var blocks = require("./blocks_mtext.json")
 var colors = ["black","red","green","brown","blue","purple","cyan","light_gray","gray","pink","lime","yellow","light_blue","magenta","orange","white"]
 var test = "\n"
 for (var i = 0; blocks.length > i ; i++) {
@@ -23,7 +23,8 @@ for (var i = 0; blocks.length > i ; i++) {
 
         var blockstate = {}
         blockstate.variants = {}
-        blockstate.variants[""] = { model: "paintingmod:block/" + colors[a] + "_" + blocks[i] }
+        blockstate.variants[""] = { model: "paintingmod:block/" + colors[a] + "_" + blocks[i]
+        }
         fs.writeFile(path.join(blockstatepath, colors[a] + "_" + blocks[i] + ".json"), JSON.stringify(blockstate), (err) => {
             if (err) {
                 console.log(err)
@@ -31,17 +32,11 @@ for (var i = 0; blocks.length > i ; i++) {
         })
 
         var blockmodel = {
-            parent: "block/cube_all",
+            parent: "block/cube_bottom_top",
             textures: {
-                all: "paintingmod:blocks/" + colors[a] + "_" + blocks[i]
-                .replace("oak_","")
-                .replace("spruce_","")
-                .replace("birch_","")
-                .replace("jungle_","")
-                .replace("acacia_","")
-                .replace("dark_", "")
-                .replace("red_nether_brick","nether_brick")
-                .replace("red_sand", "sand")
+                bottom: "paintingmod:blocks/" + colors[a] + "_" + blocks[i].replace("red_","") + "_bottom",
+                top: "paintingmod:blocks/" + colors[a] + "_" + blocks[i].replace("red_","") + "_top",
+                side: "paintingmod:blocks/" + colors[a] + "_" + blocks[i].replace("red_","")
             }
         }
         fs.writeFile(path.join(blockmodelpath, colors[a] + "_" + blocks[i] + ".json"), JSON.stringify(blockmodel), (err) => {
