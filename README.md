@@ -1,0 +1,1 @@
+PaintingMod-Assets-Global
