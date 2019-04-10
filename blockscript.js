@@ -24,14 +24,8 @@ for (var i = 0; blocks.length > i ; i++) {
             parent: "block/cube_all",
             textures: {
                 all: "paintingmod:blocks/" + colors[a] + "_" + blocks[i]
-                .replace("oak_","")
-                .replace("spruce_","")
-                .replace("birch_","")
-                .replace("jungle_","")
-                .replace("acacia_","")
-                .replace("dark_", "")
-                .replace("red_nether_brick","nether_brick")
-                .replace("red_sand", "sand")
+                .replace("red_","")
+                .replace("smooth_","")
             }
         }
         fs.writeFile(path.join(blockmodelpath, colors[a] + "_" + blocks[i] + ".json"), JSON.stringify(blockmodel), (err) => {

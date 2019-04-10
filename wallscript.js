@@ -6,7 +6,7 @@ var itemmodelpath = "./models/item"
 var blockmodelpath = "./models/block"
 
 
-var blocks = walls.blocks
+var blocks = walls
 var colors = ["black","red","green","brown","blue","purple","cyan","light_gray","gray","pink","lime","yellow","light_blue","magenta","orange","white"]
 var lang = require("./base_script")
 lang.writeLang(lang.genLangWithSuffix(blocks, "_wall"));
@@ -39,7 +39,7 @@ for (var i = 0; blocks.length > i ; i++) {
         var blockmodelpost = {
             parent: "block/template_wall_post",
             textures: {
-                wall: "paintingmod:blocks/" + colors[a] + "_" + blocks[i]
+                wall: "paintingmod:blocks/" + colors[a] + "_" + blocks[i].replace("red_", "")
             }
         }
         fs.writeFile(path.join(blockmodelpath, colors[a] + "_" + blocks[i] + "_wall_post.json"), JSON.stringify(blockmodelpost), (err) => {
