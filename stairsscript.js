@@ -7,19 +7,10 @@ var blockmodelpath = "./src/main/resources/assets/paintingmod/models/block"
 
 var blocks = require("./stairs.json")
 var colors = ["black","red","green","brown","blue","purple","cyan","light_gray","gray","pink","lime","yellow","light_blue","magenta","orange","white"]
-var test = "\n"
+var lang = require("./base_script")
+lang.writeLang(lang.genLang(blocks));
 for (var i = 0; blocks.length > i; i++) {
-    console.log("\n#" + btouppercase(blocks[i]) + " Stairs");
-    if(!test == "\n") {
-        test = test + "\n \n#" + btouppercase(blocks[i]) + " Stairs";
-    } else {
-        test = test + " \n#" + btouppercase(blocks[i]) + " Stairs";
-    }
     for (var a = 0; colors.length > a; a++) {
-        var upcolor = ctouppcase(colors[a])
-        var upblock = btouppercase(blocks[i])
-        test = test + "\ntile.paintingmod." + colors[a] + "_" + blocks[i] + "_stairs.name=" + upcolor + " " + upblock + " Stairs";
-        console.log("The line : " + "\ntile.paintingmod." + colors[a] + "_" + blocks[i] + "_stairs.name=" + upcolor + " " + upblock + " Stairs" + "\nhas been added to the localization file");
         var blockstate = {
             variants: {}
         }
@@ -81,33 +72,9 @@ for (var i = 0; blocks.length > i; i++) {
         var blockmodel = {
             parent: "minecraft:block/stairs",
             textures: {
-                bottom: "paintingmod:blocks/" + colors[a] + "_" + blocks[i].replace("dark_oak_", "")
-                .replace("oak_", "")
-                .replace("spruce_", "")
-                .replace("birch_","")
-                .replace("jungle_","")
-                .replace("acacia_","")
-                .replace("purpur","purpur_block")
-                .replace("mossy_cobblestone","moss_stone")
-                .replace("red_nether_brick","nether_brick"),
-                top: "paintingmod:blocks/" + colors[a] + "_" + blocks[i].replace("dark_oak_", "")
-                .replace("oak_", "")
-                .replace("spruce_", "")
-                .replace("birch_","")
-                .replace("jungle_","")
-                .replace("acacia_","")
-                .replace("purpur","purpur_block")
-                .replace("mossy_cobblestone","moss_stone")
-                .replace("red_nether_brick","nether_brick"),
-                side: "paintingmod:blocks/" + colors[a] + "_" + blocks[i].replace("dark_oak_", "")
-                .replace("oak_", "")
-                .replace("spruce_", "")
-                .replace("birch_","")
-                .replace("jungle_","")
-                .replace("acacia_","")
-                .replace("purpur","purpur_block")
-                .replace("mossy_cobblestone","moss_stone")
-                .replace("red_nether_brick","nether_brick")
+                bottom: "paintingmod:blocks/" + colors[a] + "_" + blocks[i],
+                top: "paintingmod:blocks/" + colors[a] + "_" + blocks[i],
+                side: "paintingmod:blocks/" + colors[a] + "_" + blocks[i]
             }
         }
         fs.writeFile(path.join(blockmodelpath, colors[a] + "_" + blocks[i] + "_stairs.json"), JSON.stringify(blockmodel), (err) => {
@@ -134,40 +101,4 @@ for (var i = 0; blocks.length > i; i++) {
             }
         })
     }
-}
-var langfile = langfile + test;
-fs.writeFile("./dev.lang", langfile, (err) => {
-   if (err) throw err;
-})
-
-function ctouppcase(string) {
-    var wordlist = string.split("_")
-    var dddd = ""
-    for (var z = 0; wordlist.length > z; z++) {
-        if (z===0) {
-            dddd = wordtouppercase(wordlist[0])
-        } else {
-            dddd = dddd + " " + wordtouppercase(wordlist[z])
-        }
-    }
-    return dddd
-}
-
-function btouppercase(string) {
-    var wordlist = string.split("_")
-    var dddd = ""
-    for (var z = 0; wordlist.length > z; z++) {
-        if (z===0) {
-            dddd = wordtouppercase(wordlist[0])
-        } else {
-            dddd = dddd + " " + wordtouppercase(wordlist[z])
-        }
-    }
-    return dddd
-}
-
-function wordtouppercase(string) {
-    var fletter = string.substring(0,1)
-    var rest = string.substr(1)
-    return fletter.toUpperCase() + rest
 }

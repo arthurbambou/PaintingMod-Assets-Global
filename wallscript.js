@@ -8,20 +8,10 @@ var blockmodelpath = "./src/main/resources/assets/paintingmod/models/block"
 
 var blocks = walls.blocks
 var colors = ["black","red","green","brown","blue","purple","cyan","light_gray","gray","pink","lime","yellow","light_blue","magenta","orange","white"]
-var test = "\n"
+var lang = require("./base_script")
+lang.writeLang(lang.genLang(blocks));
 for (var i = 0; blocks.length > i ; i++) {
-    console.log("\n#" + btouppercase(blocks[i]) + " Walls");
-    if(!test == "\n") {
-        test = test + "\n \n#" + btouppercase(blocks[i]) + " Walls";
-    } else {
-        test = test + " \n#" + btouppercase(blocks[i]) + " Walls";
-    }
     for (var a = 0; colors.length > a ; a++) {
-        var upcolor = ctouppcase(colors[a])
-        var upblock = btouppercase(blocks[i])
-        test = test + "\ntile.paintingmod.".replace("paintingmod", walls.modid) + colors[a] + "_" + blocks[i] + "_wall.name=" + upcolor + " " + upblock + " Wall";
-        console.log("The line : " + "\ntile.paintingmod.".replace("paintingmod", walls.modid) + colors[a] + "_" + blocks[i] + "_wall.name=" + upcolor + " " + upblock + " Wall" + "\nhas been added to the localization file");
-
         var blockstate = {
             multipart: [
                 { when: { up: true},
@@ -50,9 +40,6 @@ for (var i = 0; blocks.length > i ; i++) {
             parent: "block/template_wall_post",
             textures: {
                 wall: "paintingmod:blocks/" + colors[a] + "_" + blocks[i]
-                .replace("mossy_cobblestone","moss_stone")
-                .replace("red_","")
-                .replace("purpur", "purpur_block")
             }
         }
         fs.writeFile(path.join(blockmodelpath, colors[a] + "_" + blocks[i] + "_wall_post.json"), JSON.stringify(blockmodelpost), (err) => {
@@ -87,40 +74,4 @@ for (var i = 0; blocks.length > i ; i++) {
             }
         })
     }
-}
-var langfile = langfile + test;
-fs.writeFile("./dev.lang", langfile, (err) => {
-   if (err) throw err;
-})
-
-function ctouppcase(string) {
-    var wordlist = string.split("_")
-    var dddd = ""
-    for (var z = 0; wordlist.length > z; z++) {
-        if (z===0) {
-            dddd = wordtouppercase(wordlist[0])
-        } else {
-            dddd = dddd + " " + wordtouppercase(wordlist[z])
-        }
-    }
-    return dddd
-}
-
-function btouppercase(string) {
-    var wordlist = string.split("_")
-    var dddd = ""
-    for (var z = 0; wordlist.length > z; z++) {
-        if (z===0) {
-            dddd = wordtouppercase(wordlist[0])
-        } else {
-            dddd = dddd + " " + wordtouppercase(wordlist[z])
-        }
-    }
-    return dddd
-}
-
-function wordtouppercase(string) {
-    var fletter = string.substring(0,1)
-    var rest = string.substr(1)
-    return fletter.toUpperCase() + rest
 }
