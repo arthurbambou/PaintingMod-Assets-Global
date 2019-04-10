@@ -1,14 +1,14 @@
 const fs = require("fs")
 const path = require('path')
 
-var blockstatepath = "./src/main/resources/assets/paintingmod/blockstates"
-var itemmodelpath = "./src/main/resources/assets/paintingmod/models/item"
-var blockmodelpath = "./src/main/resources/assets/paintingmod/models/block"
+var blockstatepath = "./blockstates"
+var itemmodelpath = "./models/item"
+var blockmodelpath = "./models/block"
 
 var blocks = require("./stairs.json")
 var colors = ["black","red","green","brown","blue","purple","cyan","light_gray","gray","pink","lime","yellow","light_blue","magenta","orange","white"]
 var lang = require("./base_script")
-lang.writeLang(lang.genLang(blocks));
+lang.writeLang(lang.genLangWithSuffix(blocks, "_stairs"));
 for (var i = 0; blocks.length > i; i++) {
     for (var a = 0; colors.length > a; a++) {
         var blockstate = {

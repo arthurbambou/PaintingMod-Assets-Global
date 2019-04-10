@@ -19,6 +19,25 @@ module.exports.genLang = function genLang(blocks) {
     return test;
 }
 
+module.exports.genLangWithSuffix = function genLang(blocks, suffix) {
+    var test = "\n"
+    for (var i = 0; blocks.length > i ; i++) {
+        console.log("\n#" + btouppercase(blocks[i] + suffix) + " Blocks");
+        if(test != "\n") {
+            test = test + "\n \n#" + btouppercase(blocks[i] + suffix) + " Blocks";
+        } else {
+            test = "#" + btouppercase(blocks[i] + suffix) + " Blocks";
+        }
+        for (var a = 0; colors.length > a ; a++) {
+            var upcolor = ctouppcase(colors[a])
+            var upblock = btouppercase(blocks[i] + suffix)
+            test = test + "\ntile.paintingmod." + colors[a] + "_" + blocks[i] + suffix + ".name=" + upcolor + " " + upblock;
+            console.log("The line : " + "\ntile.paintingmod." + colors[a] + "_" + blocks[i] + suffix + ".name=" + upcolor + " " + upblock + "\nhas been added to the localization file");
+        }
+    }
+    return test;
+}
+
 module.exports.writeLang = function writeLang(text) {
     var langfile = text;
     fs.writeFile("./dev.lang", langfile, (err) => {

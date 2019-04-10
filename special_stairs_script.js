@@ -7,14 +7,8 @@ var blockmodelpath = "./models/block"
 
 var blocks = require("./special_stairs.json")
 var colors = ["black","red","green","brown","blue","purple","cyan","light_gray","gray","pink","lime","yellow","light_blue","magenta","orange","white"]
-for (var s = 0; s < blocks.length; s++) {
-    blocks[s] = blocks[s] + "_stairs"
-}
 var lang = require("./base_script")
-lang.writeLang(lang.genLang(blocks));
-for (var s = 0; s < blocks.length; s++) {
-    blocks[s] = blocks[s].replace("_stairs", "")
-}
+lang.writeLang(lang.genLangWithSuffix(blocks, "_stairs"));
 for (var i = 0; blocks.length > i; i++) {
     for (var a = 0; colors.length > a; a++) {
         var blockstate = {

@@ -1,15 +1,15 @@
 var fs = require("fs")
 var path = require("path")
 var walls = require("./walls.json")
-var blockstatepath = "./src/main/resources/assets/paintingmod/blockstates".replace("paintingmod", walls.modid)
-var itemmodelpath = "./src/main/resources/assets/paintingmod/models/item".replace("paintingmod", walls.modid)
-var blockmodelpath = "./src/main/resources/assets/paintingmod/models/block"
+var blockstatepath = "./blockstates"
+var itemmodelpath = "./models/item"
+var blockmodelpath = "./models/block"
 
 
 var blocks = walls.blocks
 var colors = ["black","red","green","brown","blue","purple","cyan","light_gray","gray","pink","lime","yellow","light_blue","magenta","orange","white"]
 var lang = require("./base_script")
-lang.writeLang(lang.genLang(blocks));
+lang.writeLang(lang.genLangWithSuffix(blocks, "_wall"));
 for (var i = 0; blocks.length > i ; i++) {
     for (var a = 0; colors.length > a ; a++) {
         var blockstate = {
