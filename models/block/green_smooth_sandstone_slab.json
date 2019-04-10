@@ -1,1 +1,1 @@
-{"parent":"minecraft:block/slab","textures":{"bottom":"paintingmod:blocks/green_sandstone","top":"paintingmod:blocks/green_sandstone","side":"paintingmod:blocks/green_sandstone"}}
+{"parent":"minecraft:block/slab","textures":{"bottom":"paintingmod:blocks/green_sandstone_top","top":"paintingmod:blocks/green_sandstone_top","side":"paintingmod:blocks/green_sandstone_top"}}

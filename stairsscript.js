@@ -74,13 +74,16 @@ for (var i = 0; blocks.length > i; i++) {
             textures: {
                 bottom: "paintingmod:blocks/" + colors[a] + "_" + blocks[i]
                 .replace("red_","")
-                .replace("smooth_",""),
+                .replace("smooth_","")
+                .replace("stone","stone_top"),
                 top: "paintingmod:blocks/" + colors[a] + "_" + blocks[i]
                 .replace("red_","")
-                .replace("smooth_",""),
+                .replace("smooth_","")
+                .replace("stone","stone_top"),
                 side: "paintingmod:blocks/" + colors[a] + "_" + blocks[i]
                 .replace("red_","")
                 .replace("smooth_","")
+                .replace("stone","stone_top")
             }
         }
         fs.writeFile(path.join(blockmodelpath, colors[a] + "_" + blocks[i] + "_stairs.json"), JSON.stringify(blockmodel), (err) => {

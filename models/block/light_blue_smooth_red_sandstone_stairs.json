@@ -1,1 +1,1 @@
-{"parent":"minecraft:block/stairs","textures":{"bottom":"paintingmod:blocks/light_blue_sandstone","top":"paintingmod:blocks/light_blue_sandstone","side":"paintingmod:blocks/light_blue_sandstone"}}
+{"parent":"minecraft:block/stairs","textures":{"bottom":"paintingmod:blocks/light_blue_sandstone_top","top":"paintingmod:blocks/light_blue_sandstone_top","side":"paintingmod:blocks/light_blue_sandstone_top"}}

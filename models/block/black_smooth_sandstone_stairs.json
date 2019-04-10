@@ -1,1 +1,1 @@
-{"parent":"minecraft:block/stairs","textures":{"bottom":"paintingmod:blocks/black_sandstone","top":"paintingmod:blocks/black_sandstone","side":"paintingmod:blocks/black_sandstone"}}
+{"parent":"minecraft:block/stairs","textures":{"bottom":"paintingmod:blocks/black_sandstone_top","top":"paintingmod:blocks/black_sandstone_top","side":"paintingmod:blocks/black_sandstone_top"}}

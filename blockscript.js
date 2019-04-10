@@ -26,6 +26,7 @@ for (var i = 0; blocks.length > i ; i++) {
                 all: "paintingmod:blocks/" + colors[a] + "_" + blocks[i]
                 .replace("red_","")
                 .replace("smooth_","")
+                .replace("stone","stone_top")
             }
         }
         fs.writeFile(path.join(blockmodelpath, colors[a] + "_" + blocks[i] + ".json"), JSON.stringify(blockmodel), (err) => {

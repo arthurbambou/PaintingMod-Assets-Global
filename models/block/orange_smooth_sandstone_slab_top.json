@@ -1,1 +1,1 @@
-{"parent":"minecraft:block/slab_top","textures":{"bottom":"paintingmod:blocks/orange_sandstone","top":"paintingmod:blocks/orange_sandstone","side":"paintingmod:blocks/orange_sandstone"}}
+{"parent":"minecraft:block/slab_top","textures":{"bottom":"paintingmod:blocks/orange_sandstone_top","top":"paintingmod:blocks/orange_sandstone_top","side":"paintingmod:blocks/orange_sandstone_top"}}
