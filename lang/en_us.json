@@ -2933,5 +2933,23 @@
     "block.fabriblocks.light_blue_purpur_wall": "Light Blue Purpur Wall",
     "block.fabriblocks.magenta_purpur_wall": "Magenta Purpur Wall",
     "block.fabriblocks.orange_purpur_wall": "Orange Purpur Wall",
-    "block.fabriblocks.white_purpur_wall": "White Purpur Wall"
+    "block.fabriblocks.white_purpur_wall": "White Purpur Wall",
+
+    "_comment": "Red Sandstone Blocks",
+    "block.paintingmod.black_red_sandstone": "Black Red Sandstone",
+    "block.paintingmod.red_red_sandstone": "Red Red Sandstone",
+    "block.paintingmod.green_red_sandstone": "Green Red Sandstone",
+    "block.paintingmod.brown_red_sandstone": "Brown Red Sandstone",
+    "block.paintingmod.blue_red_sandstone": "Blue Red Sandstone",
+    "block.paintingmod.purple_red_sandstone": "Purple Red Sandstone",
+    "block.paintingmod.cyan_red_sandstone": "Cyan Red Sandstone",
+    "block.paintingmod.light_gray_red_sandstone": "Light Gray Red Sandstone",
+    "block.paintingmod.gray_red_sandstone": "Gray Red Sandstone",
+    "block.paintingmod.pink_red_sandstone": "Pink Red Sandstone",
+    "block.paintingmod.lime_red_sandstone": "Lime Red Sandstone",
+    "block.paintingmod.yellow_red_sandstone": "Yellow Red Sandstone",
+    "block.paintingmod.light_blue_red_sandstone": "Light Blue Red Sandstone",
+    "block.paintingmod.magenta_red_sandstone": "Magenta Red Sandstone",
+    "block.paintingmod.orange_red_sandstone": "Orange Red Sandstone",
+    "block.paintingmod.white_red_sandstone": "White Red Sandstone"
 }
